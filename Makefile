@@ -1,4 +1,4 @@
-DAFNY := "dafny"
+DAFNY := dafny
 DAFNY_OPTIONS := -t py
 
 .PHONY: all
@@ -12,4 +12,8 @@ clean:
 
 .PHONY: run
 run:
-	$(DAFNY) $(DAFNY_OPTIONS) Main.dfy
+	$(DAFNY) run $(DAFNY_OPTIONS) Main.dfy
+
+.PHONY: test
+test:
+	$(DAFNY) test $(DAFNY_OPTIONS) Main.dfy
